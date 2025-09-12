@@ -1,0 +1,11 @@
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# Lambda packages
+*.zip
+
+# Python cache
+__pycache__/
