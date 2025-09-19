@@ -33,5 +33,13 @@ resource "aws_lambda_function" "this" {
   }
 
   source_code_hash = filebase64sha256(var.filename)
+
+  dynamic "dead_letter_config" {
+    for_each = var.dlq_arn != null ? [1] : []
+    content {
+      target_arn = var.dlq_arn
+    }
+    
+  }
   
 }

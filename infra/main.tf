@@ -42,4 +42,13 @@ module "lambda" {
     runtime = "python3.12"
     filename = "../lambdas/hello.zip"
     environment = {}
+    dlq_arn = module.sfd-dlq.queue_arn
+}
+
+module "sfd-dlq" {
+    source = "./modules/sqs-queue"
+    queue_name = "sfd-dlq"
+    visibility_timeout_seconds = 30
+    message_retention_seconds = 1209600
+  
 }

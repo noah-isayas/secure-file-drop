@@ -15,3 +15,9 @@ variable "environment" {
     type = map(string) 
     default = {}
 }
+
+variable "dlq_arn" {
+  description = "ARN of the SQS DLQ to attach to the Lambda (optional)"
+  type        = string
+  default     = null
+}

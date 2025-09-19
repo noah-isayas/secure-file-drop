@@ -21,4 +21,3 @@ variable "visibility_timeout_seconds" {
   default     = 30
   
 }
-    
